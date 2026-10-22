@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="head">
+        <div class="navbar">
+            <h2 id="headcenter" style="color: white;"><img width="100" height="100" src="https://img.icons8.com/bubbles/100/wallet.png" alt="wallet"/>Spend<span style="color: rgb(45, 221, 45);">Smart</span></h2>
+            <nav>
+                <ul>
+                    <li style="background-color: aquamarine;">Dashboard</li>
+                    <li>Transaction</li>
+                    <li>Budget</li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="space">
+        <div class="title">
+            <h2 style="color: rgba(50, 50, 109, 0.705);padding: 10px;padding-left: 15px;" >Good Morning, Kabilan!</h2>
+        </div>
+        <div class="totalinfo">
+            <div class="totalspend">
+                <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/wallet.png" alt="wallet" id="image" style="background-color: rgba(28, 213, 28, 0.78);"/>
+                <div class="infocontent">
+                    <p><b>Total Spent</b></p>
+                    <span id="totalspendcount">0</span>
+                </div>
+            </div> 
+            <div class="totalexpense">
+                <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/document--v1.png" alt="document--v1" id="image" style="background-color: rgba(35, 35, 207, 0.654);"/>
+                <div class="infocontent">
+                    <p><b>Total expenses</b></p>
+                    <span id="totalexpensecount">0</span>
+                </div>
+            </div>
+            <div class="highestexpense">
+                <img width="50" height="50" src="https://img.icons8.com/windows/32/increase-profits.png" alt="increase-profits" id="image" style="background-color: rgba(231, 82, 56, 0.822);"/>
+                <div class="infocontent">
+                    <p><b>Highest Expenses</b></p>
+                    <span id="highestexpensecount">0</span>
+                </div>
+            </div>
+            <div class="remainingbudget">
+                <img width="50" height="50" src="https://img.icons8.com/ios-glyphs/30/wallet.png" alt="wallet" id="image" style="background-color: rgb(97, 198, 232);"/>
+                <div class="infocontent">
+                    <p><b>Remaining Budget</b></p>
+                    <span id="remainingbudgetcount">0</span>
+                </div>
+            </div>
+        </div>
+        <div class="infodetail">
+            <div class="Addexpense" style="grid-area: box1;">
+                <h4 style="padding-top: 10px;">Add New expenses</h4><br>
+                <label>Expense name</label><br>
+                <input type="text" id="inputname" class="inputbox" required><br><br>
+                <label>amount</label><br>
+                <input type="tell" id="inputamount" class="inputbox" required><br><br>
+                <label>Category</label><br>
+                <select id="inputcategory" class="inputbox" required>
+                   <option>Food</option>
+                   <option>Travel</option>
+                   <option>Shopping</option>
+                   <option>Education</option>
+                   <option>Others</option>
+                </select><br><br>
+                <label>Date</label><br>
+                <input type="date" id="inputdate"><br><br>
+                <button id="addexpensebutton" onclick="addexpense()">Add Expenses</button>
+            </div>
+            <div class="spendingcaegory" style="grid-area: box2;">
+                <h4 id="spendingcategory">Spending by Category</h4>
+                <p id="spendingon">Food</p>
+                <p id="spendingon">Travel</p>
+                <p id="spendingon">Shopping</p>
+                <p id="spendingon">Education</p>
+                <p id="spendingon">other</p>
+            </div>
+            <div class="monthlybudget" style="grid-area: box3;">
+                <h4>Monthly Budget</h4><br>
+                <p style="padding-bottom: 10px;">Set your monthly Budget</p>
+                <input type="tel" id="inputbudget">
+                <button onclick="alert('Budget Setted!')">Set</button><br><br>
+                <input type="range" >
+            </div>
+            <div></div>
+            <div class="transactions" style="grid-area: box5;">
+                <h4 style="padding: 10px;">Transactions <input type="text" placeholder="Search by name" id="transactionsearch"></h4>
+                <div>
+                    <table class="tablehead">
+                        <tr>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Amount</th>
+                            <th>Category</th>
+                            <th>Date</th>
+                            <th>Actions</th>
+                        </tr>
+                        <tbody id="transactionList"></tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="filters" style="grid-area: box6;">
+                <h4>Filter & Search</h4><br>
+                <label>Search(by name)</label><br>
+                <input type="text" id="filterinput" class="filterinput"><br><br>
+                <label>Category</label><br>
+                <select id="filtercatinput" class="filterinput" required>
+                   <option>Food</option>
+                   <option>Travel</option>
+                   <option>Shopping</option>
+                   <option>Education</option>
+                   <option>Others</option>
+                </select><br><br>
+                <button id="filterbutton" onclick="search()">Filter</button>
+                <div id="searchresult"></div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
